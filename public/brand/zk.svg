@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="127" viewBox="42 86 200 127" version="1.1">
+  <title>ZimKa ZK</title>
+  <defs>
+    <linearGradient id="blueMark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#174E91"/>
+      <stop offset="100%" stop-color="#0B3973"/>
+    </linearGradient>
+    <linearGradient id="orangeMark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFA21A"/>
+      <stop offset="100%" stop-color="#FF8700"/>
+    </linearGradient>
+  </defs>
+  <g id="monogram-ZK" stroke-linejoin="miter">
+    <path d="M42 86 H173 L96 171 H146 L121 213 H42 L115 128 H42 Z" fill="url(#blueMark)"/>
+    <path d="M42 86 H173 L156 105 H59 Z" fill="#1C5596" opacity="0.48"/>
+    <path d="M42 213 L68 183 H117 L96 213 Z" fill="#082F63" opacity="0.62"/>
+    <path d="M190 86 H242 L176 148 H140 Z" fill="url(#orangeMark)"/>
+    <path d="M140 148 L176 148 L242 213 H191 Z" fill="#FF970A"/>
+    <path d="M140 148 L176 148 L157 169 Z" fill="#F56E00" opacity="0.9"/>
+  </g>
+</svg>
