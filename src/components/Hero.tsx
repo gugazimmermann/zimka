@@ -4,6 +4,7 @@ export function Hero() {
   return (
     <section
       id="topo"
+      aria-labelledby="hero-heading"
       className="relative flex flex-col justify-center overflow-hidden pb-10 pt-16 sm:pb-12 sm:pt-20"
     >
       <div
@@ -42,7 +43,10 @@ export function Hero() {
           fetchPriority="high"
         />
 
-        <h1 className="animate-fade-up-delay text-2xl font-extrabold tracking-tight text-ink sm:text-4xl md:whitespace-nowrap xl:text-5xl">
+        <h1
+          id="hero-heading"
+          className="animate-fade-up-delay text-2xl font-extrabold tracking-tight text-ink sm:text-4xl md:whitespace-nowrap xl:text-5xl"
+        >
           {site.headline}
         </h1>
         <p className="animate-fade-up-delay-2 mt-2 text-sm text-muted sm:text-base md:whitespace-nowrap">

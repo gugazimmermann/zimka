@@ -1,0 +1,28 @@
+Fonte
+Montserrat
+
+
+
+Azul-marinho
+Fundo principal e versões corporativas
+#002040
+
+Azul do monograma
+Letra Z e elementos tecnológicos
+#0B4A98
+
+Laranja principal
+Letra K, destaques e detalhes
+#FF9800
+
+Laranja escuro
+Facetas e sombras do símbolo
+#F36F00
+
+Branco
+Nome e textos sobre fundo escuro
+#FFFFFF
+
+Cinza-claro
+Textos secundários e elementos de apoio
+#CBD5E1

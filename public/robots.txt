@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zimka.com.br/sitemap.xml

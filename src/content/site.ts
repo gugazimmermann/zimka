@@ -2,10 +2,16 @@ export const site = {
   name: 'ZimKa',
   legalName: 'Zimmermann e Kauling Sistemas',
   tagline: 'APLICATIVOS • SISTEMAS • WEB',
+  url: 'https://zimka.com.br',
   headline: 'Software que vende, opera e escala o seu negócio',
   lead: 'Apps, sistemas e web sob medida — da ideia ao produto no ar, com qualidade de quem já entrega em saúde, varejo e eventos.',
   email: 'contato@zimka.com.br',
   mailto: 'mailto:contato@zimka.com.br',
+  seo: {
+    title: 'ZimKa — Software sob medida: apps, sistemas e web',
+    description:
+      'ZimKa — software sob medida que vende e opera: apps, sistemas e web. Conheça GlicoDose, Montagem de Mesa e quiosques de feira.',
+  },
 } as const
 
 export type Product = {

@@ -5,6 +5,7 @@ export function HowWeWork() {
   return (
     <section
       id="como"
+      aria-labelledby="como-heading"
       className="relative border-t border-white/10 py-10 sm:py-14"
       style={{
         background:
@@ -13,7 +14,10 @@ export function HowWeWork() {
     >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
-          <h2 className="text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">
+          <h2
+            id="como-heading"
+            className="text-2xl font-extrabold tracking-tight text-ink sm:text-3xl"
+          >
             {howWeWork.title}
           </h2>
           <p className="mt-2 max-w-4xl text-sm text-muted md:max-w-none md:whitespace-nowrap">

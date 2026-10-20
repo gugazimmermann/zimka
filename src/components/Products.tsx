@@ -3,13 +3,20 @@ import { Reveal } from './Reveal'
 
 export function Products() {
   return (
-    <section id="produtos" className="relative border-t border-white/10 bg-navy-deep py-10 sm:py-14">
+    <section
+      id="produtos"
+      aria-labelledby="produtos-heading"
+      className="relative border-t border-white/10 bg-navy-deep py-10 sm:py-14"
+    >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
           <p className="text-xs font-semibold tracking-[0.2em] text-orange uppercase">
             Produtos
           </p>
-          <h2 className="mt-1.5 text-2xl font-extrabold tracking-tight text-ink sm:text-3xl md:whitespace-nowrap">
+          <h2
+            id="produtos-heading"
+            className="mt-1.5 text-2xl font-extrabold tracking-tight text-ink sm:text-3xl md:whitespace-nowrap"
+          >
             Cases que já geram resultado
           </h2>
           <p className="mt-2 text-sm text-muted md:whitespace-nowrap">

@@ -23,6 +23,12 @@ export function Footer() {
             <span className="mx-2 text-orange">•</span>
             Web
           </p>
+          <a
+            href={site.mailto}
+            className="mt-2 inline-block text-xs text-muted transition hover:text-orange"
+          >
+            {site.email}
+          </a>
         </div>
         <p className="text-xs text-muted">
           © {year} {site.name}. Todos os direitos reservados.
