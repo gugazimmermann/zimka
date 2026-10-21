@@ -3,6 +3,9 @@ node_modules/
 dist/
 dist-ssr/
 
+# Brand kit (local only)
+elementos/
+
 # Logs & local
 *.log
 npm-debug.log*

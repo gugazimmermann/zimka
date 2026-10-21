@@ -4,13 +4,13 @@ export const site = {
   tagline: 'APLICATIVOS • SISTEMAS • WEB',
   url: 'https://zimka.com.br',
   headline: 'Software que vende, opera e escala o seu negócio',
-  lead: 'Apps, sistemas e web sob medida — da ideia ao produto no ar, com qualidade de quem já entrega em saúde, varejo e eventos.',
-  email: 'contato@zimka.com.br',
-  mailto: 'mailto:contato@zimka.com.br',
+  lead: 'Apps, sistemas e web sob medida — da ideia ao produto no ar, com entrega em saúde, varejo e eventos.',
+  email: 'zimkasistemas@gmail.com',
+  mailto: 'mailto:zimkasistemas@gmail.com',
   seo: {
     title: 'ZimKa — Software sob medida: apps, sistemas e web',
     description:
-      'ZimKa — software sob medida que vende e opera: apps, sistemas e web. Conheça GlicoDose, Montagem de Mesa e quiosques de feira.',
+      'ZimKa — software sob medida que vende e opera: apps, sistemas e web. Conheça GlicoDose, Montagem de Mesa, quiosques e websites.',
   },
 } as const
 
@@ -25,6 +25,8 @@ export type Product = {
   imageSurface?: 'light'
   href?: string
   hrefLabel?: string
+  /** Link interno do site (react-router); se false, abre em nova aba */
+  external?: boolean
 }
 
 export const products: Product[] = [
@@ -56,13 +58,14 @@ export const products: Product[] = [
     ],
     href: 'https://glicodose.app',
     hrefLabel: 'Ver o GlicoDose',
+    external: true,
   },
   {
     id: 'montagem-de-mesa',
     name: 'Montagem de Mesa',
     eyebrow: 'Mesa posta · SaaS',
     summary:
-      'O cliente monta a mesa sozinho, vê o resultado na hora e envia o pedido pronto — você recebe o lead no painel.',
+      'O cliente monta a mesa sozinho, vê o resultado na hora e envia o pedido pronto — você fecha o lead.',
     points: [
       'Link e catálogo próprios da loja',
       'Pré-visualização ao vivo da mesa',
@@ -71,38 +74,57 @@ export const products: Product[] = [
     ],
     images: [
       {
-        src: '/media/montagem-de-mesa.png',
-        alt: 'Pré-visualização de uma mesa posta montada no app',
+        src: '/media/montagem/ui-mesa-montada.png',
+        alt: 'App Montagem de Mesa com preview da mesa e catálogo',
       },
     ],
+    href: '/montagem-de-mesa',
+    hrefLabel: 'Saiba mais',
+    external: false,
   },
   {
     id: 'quiosque',
     name: 'Quiosque de Feira',
     eyebrow: 'Totem touchscreen',
     summary:
-      'Capture leads na feira com totem 100% da sua marca: teclado virtual, campos sob medida e dados online ou offline.',
+      'Totem da sua marca na feira: teclado virtual, campos sob medida e leads online ou offline.',
     points: [
       'Pronto para tela touch no evento',
       'Co-branding com logos e QR',
       'Formulário sob medida ao público',
       'Dados na nuvem ou CSV local',
     ],
-    imageSurface: 'light',
     images: [
       {
-        src: '/media/kiosk-brand-a.png',
-        alt: 'Exemplo de marca em quiosque de feira',
-      },
-      {
-        src: '/media/kiosk-brand-b.png',
-        alt: 'Exemplo de co-branding em quiosque',
-      },
-      {
-        src: '/media/kiosk-brand-c.png',
-        alt: 'Exemplo de marca parceira em quiosque',
+        src: '/media/quiosque/form-tania-teclado.png',
+        alt: 'Quiosque de feira com formulário touch e teclado virtual',
       },
     ],
+    href: '/quiosque-de-feira',
+    hrefLabel: 'Saiba mais',
+    external: false,
+  },
+  {
+    id: 'websites',
+    name: 'Websites',
+    eyebrow: 'Sites sob medida',
+    summary:
+      'Site da marca que vende: identidade, catálogo e WhatsApp — como o da Raffiner, no ar e convertendo.',
+    points: [
+      'Visual alinhado à marca e ao público',
+      'CTAs de WhatsApp, catálogo e contato',
+      'Seções claras para engajar e converter',
+      'Publicação rápida, responsivo e SEO básico',
+    ],
+    images: [
+      {
+        src: '/media/websites/hero.png',
+        alt: 'Home do site Raffiner com hero e botão WhatsApp',
+      },
+    ],
+    href: '/websites',
+    hrefLabel: 'Saiba mais',
+    external: false,
   },
 ]
 

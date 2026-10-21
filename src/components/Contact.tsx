@@ -19,8 +19,8 @@ export function Contact() {
           >
             Pronto para o próximo lançamento?
           </h2>
-          <p className="mt-2 max-w-4xl text-sm text-muted md:max-w-none md:whitespace-nowrap">
-            Conte o desafio. Enviamos uma proposta alinhada ao seu prazo, escopo e orçamento.
+          <p className="mt-2 text-sm text-muted md:whitespace-nowrap">
+            Conte o desafio. Enviamos uma proposta alinhada ao prazo, escopo e orçamento.
           </p>
           <a
             href={site.mailto}

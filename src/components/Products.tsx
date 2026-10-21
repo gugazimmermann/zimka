@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { products } from '../content/site'
 import { Reveal } from './Reveal'
 
@@ -20,7 +21,7 @@ export function Products() {
             Cases que já geram resultado
           </h2>
           <p className="mt-2 text-sm text-muted md:whitespace-nowrap">
-            Produtos reais, em produção. Referência do que a ZimKa entrega — ou peça o seu sob medida.
+            Produtos reais em produção — referência do que entregamos, ou peça o seu sob medida.
           </p>
         </Reveal>
 
@@ -60,14 +61,23 @@ export function Products() {
                       ))}
                     </ul>
                     {product.href ? (
-                      <a
-                        href={product.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="mt-4 inline-flex text-sm font-semibold text-orange transition hover:text-orange-dark"
-                      >
-                        {product.hrefLabel ?? 'Saiba mais'} →
-                      </a>
+                      product.external ? (
+                        <a
+                          href={product.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="mt-4 inline-flex text-sm font-semibold text-orange transition hover:text-orange-dark"
+                        >
+                          {product.hrefLabel ?? 'Saiba mais'} →
+                        </a>
+                      ) : (
+                        <Link
+                          to={product.href}
+                          className="mt-4 inline-flex text-sm font-semibold text-orange transition hover:text-orange-dark"
+                        >
+                          {product.hrefLabel ?? 'Saiba mais'} →
+                        </Link>
+                      )
                     ) : null}
                   </div>
 
@@ -89,7 +99,7 @@ export function Products() {
                               : '',
                             light
                               ? 'flex items-center justify-center bg-[#f4f6f8] px-4 py-5 sm:px-6 sm:py-6'
-                              : '',
+                              : 'overflow-hidden ring-1 ring-white/10',
                           ]
                             .filter(Boolean)
                             .join(' ')}
@@ -102,7 +112,7 @@ export function Products() {
                             className={
                               light
                                 ? 'h-auto max-h-20 w-full object-contain sm:max-h-24'
-                                : 'h-auto w-full object-cover object-top'
+                                : 'aspect-[16/10] h-auto w-full object-cover object-top'
                             }
                             loading="lazy"
                             decoding="async"

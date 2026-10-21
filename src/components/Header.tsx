@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { site } from '../content/site'
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
+  const { pathname } = useLocation()
+  const contatoHref = pathname === '/' ? '#contato' : '/#contato'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16)
@@ -20,7 +23,7 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-12 max-w-6xl items-center justify-between gap-3 px-5 sm:h-14 sm:px-8">
-        <a href="#topo" className="flex shrink-0 items-center gap-2.5" aria-label={site.name}>
+        <Link to="/" className="flex shrink-0 items-center gap-2.5" aria-label={site.name}>
           <img
             src="/brand/zk.svg"
             alt=""
@@ -32,10 +35,10 @@ export function Header() {
           <span className="text-sm font-extrabold tracking-tight text-ink sm:text-base">
             Zim<span className="text-orange">Ka</span>
           </span>
-        </a>
+        </Link>
 
         <a
-          href="#contato"
+          href={contatoHref}
           className="rounded-sm bg-orange px-3 py-1.5 text-xs font-semibold text-navy transition hover:bg-orange-dark hover:text-ink sm:text-sm"
         >
           Peça uma proposta
