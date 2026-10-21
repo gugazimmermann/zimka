@@ -34,7 +34,11 @@ export function SeoJsonLd() {
       position: index + 1,
       name: product.name,
       description: product.summary,
-      url: `${site.url}/#${product.id}`,
+      url: product.href?.startsWith('http')
+        ? product.href
+        : product.href
+          ? `${site.url}${product.href}`
+          : `${site.url}/#${product.id}`,
     })),
   }
 

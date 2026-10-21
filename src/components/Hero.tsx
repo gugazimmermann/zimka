@@ -45,13 +45,27 @@ export function Hero() {
 
         <h1
           id="hero-heading"
-          className="animate-fade-up-delay text-2xl font-extrabold tracking-tight text-ink sm:text-4xl md:whitespace-nowrap xl:text-5xl"
+          className="animate-fade-up-delay text-2xl font-extrabold tracking-tight text-ink sm:text-4xl lg:whitespace-nowrap xl:text-5xl"
         >
           {site.headline}
         </h1>
-        <p className="animate-fade-up-delay-2 mt-2 text-sm text-muted sm:text-base md:whitespace-nowrap">
+        <p className="animate-fade-up-delay-2 mt-2 max-w-3xl text-sm text-muted sm:text-base lg:max-w-none lg:whitespace-nowrap">
           {site.lead}
         </p>
+        <div className="animate-fade-up-delay-2 mt-6 flex flex-wrap items-center gap-3 sm:gap-4">
+          <a
+            href="#produtos"
+            className="inline-flex rounded-sm bg-orange px-5 py-2.5 text-sm font-bold text-navy transition hover:bg-orange-dark hover:text-ink"
+          >
+            Ver cases
+          </a>
+          <a
+            href="#contato"
+            className="inline-flex text-sm font-semibold text-ink/90 transition hover:text-orange"
+          >
+            Peça uma proposta →
+          </a>
+        </div>
       </div>
     </section>
   )

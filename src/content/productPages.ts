@@ -5,6 +5,8 @@ export type ProductPageContent = {
   lead: string
   seoTitle: string
   seoDescription: string
+  galleryEyebrow: string
+  galleryTitle: string
   stepsTitle: string
   benefitsTitle: string
   benefits: string[]
@@ -13,9 +15,65 @@ export type ProductPageContent = {
   heroImage: { src: string; alt: string }
   cta: string
   ctaSub: string
-  /** Case ao vivo (ex.: site do cliente) */
+  socialLine?: string
+  /** Case ao vivo (ex.: site do cliente ou app) */
   exampleUrl?: string
   exampleLabel?: string
+}
+
+export const glicodosePage: ProductPageContent = {
+  path: '/glicodose',
+  eyebrow: 'Saúde digital',
+  name: 'GlicoDose',
+  lead: 'Dose com apoio inteligente, histórico pronto para a consulta e visão da rede para o município — tudo no mesmo ecossistema.',
+  seoTitle: 'GlicoDose — diabetes com clareza | ZimKa',
+  seoDescription:
+    'App e painéis para diabetes: refeição, glicose, dose, consulta e rede municipal. Conheça o GlicoDose, feito pela ZimKa.',
+  galleryEyebrow: 'Na prática',
+  galleryTitle: 'Telas reais do produto',
+  stepsTitle: 'Do dia a dia ao painel',
+  benefitsTitle: 'O que muda no cuidado',
+  benefits: [
+    'Refeição por texto, foto ou voz — sem fricção no cotidiano',
+    'Glicose na dose: manual, sensor ou apps de saúde',
+    'Consulta com histórico, alertas e prescrição prontos',
+    'Painel municipal com adesão e relatórios da rede',
+  ],
+  steps: [
+    {
+      title: 'Paciente registra',
+      body: 'Refeições e glicose no app, no ritmo do dia a dia.',
+    },
+    {
+      title: 'Dose com contexto',
+      body: 'Apoio inteligente com o histórico que importa.',
+    },
+    {
+      title: 'Rede enxerga',
+      body: 'Médico e município acompanham adesão e resultados.',
+    },
+  ],
+  heroImage: {
+    src: '/media/glicodose-meal.webp',
+    alt: 'Tela do GlicoDose com registro de refeição por foto',
+  },
+  gallery: [
+    {
+      src: '/media/glicodose-dose.webp',
+      alt: 'Tela de dose de insulina no GlicoDose',
+      caption: 'Dose com contexto',
+    },
+    {
+      src: '/media/glicodose-medicos.webp',
+      alt: 'Portal médico do GlicoDose com gráficos',
+      caption: 'Portal médico e rede',
+    },
+  ],
+  cta: 'Quer levar o GlicoDose para a sua rede?',
+  ctaSub: 'Conversa rápida. Proposta alinhada ao seu contexto.',
+  socialLine: 'Em produção em saúde digital.',
+  exampleUrl: 'https://glicodose.app',
+  exampleLabel: 'Ver o app',
 }
 
 export const montagemPage: ProductPageContent = {
@@ -26,6 +84,8 @@ export const montagemPage: ProductPageContent = {
   seoTitle: 'Montagem de Mesa — o cliente monta, você fecha | ZimKa',
   seoDescription:
     'SaaS para lojas de mesa posta: catálogo próprio, preview ao vivo e pedidos por WhatsApp e e-mail. Feito pela ZimKa.',
+  galleryEyebrow: 'Na prática',
+  galleryTitle: 'Telas reais do sistema',
   stepsTitle: 'Do link ao pedido',
   benefitsTitle: 'O que muda no seu atendimento',
   benefits: [
@@ -50,23 +110,24 @@ export const montagemPage: ProductPageContent = {
     },
   ],
   heroImage: {
-    src: '/media/montagem/ui-mesa-montada.png',
+    src: '/media/montagem/ui-mesa-montada.webp',
     alt: 'App Montagem de Mesa com preview da mesa e catálogo de toalhas',
   },
   gallery: [
     {
-      src: '/media/montagem/ui-interacao.png',
+      src: '/media/montagem/ui-interacao.webp',
       alt: 'Seleção de pratos e toalha com preview da mesa atualizado',
       caption: 'Cliente escolhe as peças',
     },
     {
-      src: '/media/montagem/ui-envio.png',
+      src: '/media/montagem/ui-envio.webp',
       alt: 'Modal de envio da montagem por WhatsApp',
       caption: 'Pedido pronto no WhatsApp',
     },
   ],
   cta: 'Coloque o link da sua loja no ar',
-  ctaSub: 'Avaliação gratuita. Sem cartão para começar.',
+  ctaSub: 'Peça uma proposta. Alinhamos prazo, escopo e orçamento.',
+  socialLine: 'Feito para lojas de mesa posta em produção.',
 }
 
 export const quiosquePage: ProductPageContent = {
@@ -77,6 +138,8 @@ export const quiosquePage: ProductPageContent = {
   seoTitle: 'Quiosque de Feira — totem que captura leads | ZimKa',
   seoDescription:
     'Aplicativo de totem touchscreen para feiras: teclado virtual, co-branding e leads online ou offline. Customizado pela ZimKa.',
+  galleryEyebrow: 'Na prática',
+  galleryTitle: 'Telas reais do totem',
   stepsTitle: 'Do briefing ao totem ligado',
   benefitsTitle: 'Feito para o chão de feira',
   benefits: [
@@ -101,28 +164,29 @@ export const quiosquePage: ProductPageContent = {
     },
   ],
   heroImage: {
-    src: '/media/quiosque/form-tania-teclado.png',
+    src: '/media/quiosque/form-tania-teclado.webp',
     alt: 'Quiosque de feira com formulário touch e teclado virtual',
   },
   gallery: [
     {
-      src: '/media/quiosque/form-noivas.png',
+      src: '/media/quiosque/form-noivas.webp',
       alt: 'Formulário de leads para feira de noivas com co-branding',
       caption: 'Formulário co-branded',
     },
     {
-      src: '/media/quiosque/form-tania-teclado.png',
+      src: '/media/quiosque/form-tania-teclado.webp',
       alt: 'Totem B2B com teclado virtual aberto',
       caption: 'Teclado virtual na tela',
     },
     {
-      src: '/media/quiosque/sucesso.png',
+      src: '/media/quiosque/sucesso.webp',
       alt: 'Tela de confirmação após envio do lead no totem',
       caption: 'Confirmação na hora',
     },
   ],
   cta: 'Próxima feira com totem da sua marca?',
   ctaSub: 'Montamos, customizamos e deixamos pronto para o evento.',
+  socialLine: 'Já rodou em feiras com co-branding real.',
 }
 
 export const websitesPage: ProductPageContent = {
@@ -133,6 +197,8 @@ export const websitesPage: ProductPageContent = {
   seoTitle: 'Websites sob medida — case Raffiner | ZimKa',
   seoDescription:
     'Sites institucionais e comerciais sob medida. Veja o case Raffiner: marca, catálogo, WhatsApp e conversão. Feito pela ZimKa.',
+  galleryEyebrow: 'Na prática',
+  galleryTitle: 'O site no ar',
   stepsTitle: 'Do briefing ao site no ar',
   benefitsTitle: 'O que o site entrega',
   benefits: [
@@ -157,23 +223,24 @@ export const websitesPage: ProductPageContent = {
     },
   ],
   heroImage: {
-    src: '/media/websites/hero.png',
+    src: '/media/websites/hero.webp',
     alt: 'Home do site Raffiner com hero, catálogo e botão WhatsApp',
   },
   gallery: [
     {
-      src: '/media/websites/secoes.png',
-      alt: 'Seção de vídeo YouTube e bloco Monte sua mesa no site Raffiner',
-      caption: 'Conteúdo que engaja',
+      src: '/media/websites/destaque.webp',
+      alt: 'Mesa posta em destaque no site Raffiner',
+      caption: 'Visual que vende',
     },
     {
-      src: '/media/websites/catalogo.png',
-      alt: 'CTA Saiba como funciona e rodapé com contato da Raffiner',
-      caption: 'Conversão e contato',
+      src: '/media/websites/secoes.webp',
+      alt: 'Seção de vídeo YouTube e bloco Monte sua mesa no site Raffiner',
+      caption: 'Conteúdo que engaja',
     },
   ],
   cta: 'Quer um site assim para a sua marca?',
   ctaSub: 'Briefing curto. Proposta alinhada ao prazo e ao orçamento.',
+  socialLine: 'Case em produção: raffiner.com.br',
   exampleUrl: 'https://www.raffiner.com.br/',
   exampleLabel: 'Ver raffiner.com.br',
 }

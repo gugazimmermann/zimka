@@ -16,11 +16,11 @@ export function HowWeWork() {
         <Reveal>
           <h2
             id="como-heading"
-            className="text-2xl font-extrabold tracking-tight text-ink sm:text-3xl md:whitespace-nowrap"
+            className="text-2xl font-extrabold tracking-tight text-ink sm:text-3xl lg:whitespace-nowrap"
           >
             {howWeWork.title}
           </h2>
-          <p className="mt-2 text-sm text-muted md:whitespace-nowrap">
+          <p className="mt-2 text-sm text-muted lg:whitespace-nowrap">
             {howWeWork.lead}
           </p>
         </Reveal>
@@ -38,7 +38,9 @@ export function HowWeWork() {
                 <h3 className="mt-1.5 text-base font-bold text-ink sm:text-lg">
                   {item.title}
                 </h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-muted">{item.body}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted">
+                  {item.body}
+                </p>
               </div>
             </Reveal>
           ))}

@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { site } from '../content/site'
+import { site, whatsappHref } from '../content/site'
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const { pathname } = useLocation()
+  const casesHref = pathname === '/' ? '#produtos' : '/#produtos'
   const contatoHref = pathname === '/' ? '#contato' : '/#contato'
+  const wa = whatsappHref('Olá! Quero uma proposta da ZimKa.')
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16)
@@ -37,12 +39,30 @@ export function Header() {
           </span>
         </Link>
 
-        <a
-          href={contatoHref}
-          className="rounded-sm bg-orange px-3 py-1.5 text-xs font-semibold text-navy transition hover:bg-orange-dark hover:text-ink sm:text-sm"
-        >
-          Peça uma proposta
-        </a>
+        <div className="flex items-center gap-3 sm:gap-4">
+          <a
+            href={casesHref}
+            className="text-xs font-semibold text-muted transition hover:text-ink sm:text-sm"
+          >
+            Cases
+          </a>
+          {wa ? (
+            <a
+              href={wa}
+              target="_blank"
+              rel="noreferrer"
+              className="hidden text-xs font-semibold text-muted transition hover:text-ink sm:inline sm:text-sm"
+            >
+              WhatsApp
+            </a>
+          ) : null}
+          <a
+            href={contatoHref}
+            className="rounded-sm bg-orange px-3 py-1.5 text-xs font-semibold text-navy transition hover:bg-orange-dark hover:text-ink sm:text-sm"
+          >
+            Peça uma proposta
+          </a>
+        </div>
       </div>
     </header>
   )

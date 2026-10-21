@@ -5,8 +5,11 @@ export const site = {
   url: 'https://zimka.com.br',
   headline: 'Software que vende, opera e escala o seu negócio',
   lead: 'Apps, sistemas e web sob medida — da ideia ao produto no ar, com entrega em saúde, varejo e eventos.',
+  socialProof: 'Em produção: Raffiner, feiras e saúde digital.',
   email: 'zimkasistemas@gmail.com',
   mailto: 'mailto:zimkasistemas@gmail.com',
+  /** Dígitos com DDI (ex.: 5547999999999). Vazio = não exibe WhatsApp. */
+  whatsappDigits: '',
   seo: {
     title: 'ZimKa — Software sob medida: apps, sistemas e web',
     description:
@@ -14,8 +17,15 @@ export const site = {
   },
 } as const
 
+export function whatsappHref(text?: string): string | null {
+  if (!site.whatsappDigits) return null
+  const base = `https://wa.me/${site.whatsappDigits}`
+  return text ? `${base}?text=${encodeURIComponent(text)}` : base
+}
+
 export type Product = {
   id: string
+  kind: 'product' | 'service'
   name: string
   eyebrow: string
   summary: string
@@ -32,6 +42,7 @@ export type Product = {
 export const products: Product[] = [
   {
     id: 'glicodose',
+    kind: 'product',
     name: 'GlicoDose',
     eyebrow: 'Saúde digital',
     summary:
@@ -56,12 +67,13 @@ export const products: Product[] = [
         alt: 'Portal médico do GlicoDose com gráficos',
       },
     ],
-    href: 'https://glicodose.app',
-    hrefLabel: 'Ver o GlicoDose',
-    external: true,
+    href: '/glicodose',
+    hrefLabel: 'Saiba mais',
+    external: false,
   },
   {
     id: 'montagem-de-mesa',
+    kind: 'product',
     name: 'Montagem de Mesa',
     eyebrow: 'Mesa posta · SaaS',
     summary:
@@ -74,7 +86,7 @@ export const products: Product[] = [
     ],
     images: [
       {
-        src: '/media/montagem/ui-mesa-montada.png',
+        src: '/media/montagem/ui-mesa-montada.webp',
         alt: 'App Montagem de Mesa com preview da mesa e catálogo',
       },
     ],
@@ -84,6 +96,7 @@ export const products: Product[] = [
   },
   {
     id: 'quiosque',
+    kind: 'product',
     name: 'Quiosque de Feira',
     eyebrow: 'Totem touchscreen',
     summary:
@@ -96,7 +109,7 @@ export const products: Product[] = [
     ],
     images: [
       {
-        src: '/media/quiosque/form-tania-teclado.png',
+        src: '/media/quiosque/form-tania-teclado.webp',
         alt: 'Quiosque de feira com formulário touch e teclado virtual',
       },
     ],
@@ -106,6 +119,7 @@ export const products: Product[] = [
   },
   {
     id: 'websites',
+    kind: 'service',
     name: 'Websites',
     eyebrow: 'Sites sob medida',
     summary:
@@ -118,7 +132,7 @@ export const products: Product[] = [
     ],
     images: [
       {
-        src: '/media/websites/hero.png',
+        src: '/media/websites/hero.webp',
         alt: 'Home do site Raffiner com hero e botão WhatsApp',
       },
     ],
@@ -127,6 +141,9 @@ export const products: Product[] = [
     external: false,
   },
 ]
+
+export const productCases = products.filter((p) => p.kind === 'product')
+export const serviceCases = products.filter((p) => p.kind === 'service')
 
 export const howWeWork = {
   title: 'Como trabalhamos',
@@ -146,3 +163,10 @@ export const howWeWork = {
     },
   ],
 } as const
+
+export const footerLinks = [
+  { to: '/glicodose', label: 'GlicoDose' },
+  { to: '/montagem-de-mesa', label: 'Montagem de Mesa' },
+  { to: '/quiosque-de-feira', label: 'Quiosque de Feira' },
+  { to: '/websites', label: 'Websites' },
+] as const
